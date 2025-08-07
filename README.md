@@ -1,4 +1,6 @@
 📈 Market Pulse – AI-Powered Stock Analysis
+
+
 A full-stack AI-driven stock analysis web app using React and Django. Enter a stock ticker to fetch real-time price momentum and news, and get a summarized “pulse” (bullish / neutral / bearish) with a concise LLM-generated explanation.
 
 🚀 Features
