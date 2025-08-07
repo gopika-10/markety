@@ -36,7 +36,8 @@ SQLite (for local dev) / PostgreSQL (optional)
 External APIs: Alpha Vantage (price), NewsAPI (news)
 
 Gemini / other LLM APIs (for explanation generation)
-Design and Trade-offs
+
+Design and Trade-offs:
 1. Frontend (ReactJS):
 ReactJS was chosen for its component-based architecture and efficient rendering. It enables fast development of interactive UIs.
 Trade-off: React doesn’t include built-in state management or routing, so we had to integrate other tools manually.
