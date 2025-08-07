@@ -67,7 +67,7 @@ AI-powered platform to analyze stock data, get real-time insights, and make info
 
 ---
 
-## 🖥️ Setup Instructions
+## 🖥️ Tech Stack
 
 ### Backend (Django)
 ```bash
@@ -77,6 +77,12 @@ source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
+
+###Frontend
+cd frontend
+npm install
+npm start
+
 
 
 🚀 Future Scope / Next Steps
