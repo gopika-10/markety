@@ -69,8 +69,9 @@ AI-powered platform to analyze stock data, get real-time insights, and make info
 
 ## 🖥️ Tech Stack
 
-### Backend (Django)
+### Backend (Django) and Frontend
 ```bash
+###Backend
 cd backend
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
