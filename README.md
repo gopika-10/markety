@@ -1,69 +1,95 @@
-📈 Market Pulse – AI-Powered Stock Analysis
+# 📈 Market Pulse – AI-Powered Stock Analysis
+
+AI-powered platform to analyze stock data, get real-time insights, and make informed decisions using LLMs and APIs.
+
+---
+
+## 🔧 Tech Stack
+
+- **Frontend**: ReactJS (Next.js), TailwindCSS, ShadCN UI  
+- **Backend**: Python (Django REST Framework)  
+- **AI Integration**: Genkit + Gemini Pro  
+- **External APIs**: Alpha Vantage, Financial News API
+
+---
+
+## 📁 Project Structure
+
+📦 market-pulse/
+├── frontend/ # React App
+│ └── src/
+│ ├── components/
+│ ├── App.js
+│ └── ...
+├── backend/ # Django App
+│ ├── stocks/ # App with Stock model & views
+│ ├── stock_project/
+│ └── manage.py
+└── README.md
 
 
-A full-stack AI-driven stock analysis web app using React and Django. Enter a stock ticker to fetch real-time price momentum and news, and get a summarized “pulse” (bullish / neutral / bearish) with a concise LLM-generated explanation.
+---
 
-🚀 Features
-💡 Enter a stock ticker to get momentum + news-based AI analysis.
+## 🚀 Features
 
-🧠 Uses an LLM (e.g. Gemini) to generate the stock’s "pulse" and a natural language summary.
+- Real-time stock price visualization
+- News sentiment analysis for selected stocks
+- LLM-powered summary of current stock trends
+- Interactive dashboard with search & filter
+- Secure backend with Django REST APIs
 
-📈 Sparkline chart shows recent 5-day momentum visually.
+---
 
-🌐 Backend API built with Django & Django REST Framework.
+## ✅ Functional Requirements
 
-💬 Chat-style React UI with JSON preview and styled summary card.
+- Users can input stock symbols and get visualized data
+- Users can view latest news and sentiment
+- AI provides analysis based on stock trends
+- Data fetched securely and updated dynamically
 
-🎨 Clean and responsive frontend with React.
+---
 
-🛠 Tech Stack
-Frontend:
+## 🧠 AI Usage
 
-React
+| Feature | Approach | Trade-offs |
+|--------|----------|------------|
+| Sentiment Analysis | Use Gemini Pro via Genkit to summarize and classify news as positive, negative, or neutral | **Pros**: Fast, contextual, scalable<br>**Cons**: May hallucinate, API limits |
+| Trend Summary | Use GenAI for natural language trend insights | **Pros**: Human-like explanation<br>**Cons**: Not 100% accurate without strong prompt tuning |
 
-Axios
+---
 
-Chart.js / Recharts
+## 📌 Trade-Offs Summary
 
-(Optional: Tailwind CSS)
+- **GenAI for summarization**: Easy to integrate but may produce hallucinations.  
+- **Alpha Vantage API**: Free tier is limited – suitable for prototypes, not high-frequency use.  
+- **Frontend in React**: Fast dev with ShadCN + Tailwind, but might over-render without memoization.  
+- **Django REST**: Robust and secure, but slightly heavier than Flask for simple APIs.
 
-Backend:
+---
 
-Django
+## 🖥️ Setup Instructions
 
-Django REST Framework
+### Backend (Django)
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
 
-SQLite (for local dev) / PostgreSQL (optional)
 
-External APIs: Alpha Vantage (price), NewsAPI (news)
+🚀 Future Scope / Next Steps
+Add User Accounts for saving preferences and analysis history.
 
-Gemini / other LLM APIs (for explanation generation)
+Add Charts using libraries like Chart.js or Recharts for better visualizations.
 
-Design and Trade-offs:
-1. Frontend (ReactJS):
-ReactJS was chosen for its component-based architecture and efficient rendering. It enables fast development of interactive UIs.
-Trade-off: React doesn’t include built-in state management or routing, so we had to integrate other tools manually.
+Use Redis/Memcached for caching repeated API responses.
 
-2. Backend (Django REST Framework):
-DRF was selected for its robust and scalable REST API support, and integration with Django’s ORM.
-Trade-off: Slightly heavier and more configuration than lightweight frameworks like Flask.
+Add CI/CD & Deployment on platforms like Render, Vercel, or Railway.
 
-3. Database (SQLite):
-SQLite was used for simplicity during development, with easy setup and zero configuration.
-Trade-off: Not ideal for concurrent writes or large-scale production applications.
+Use Celery for background tasks like scheduled analysis or email reports.
 
-4. API Integration:
-Simple REST endpoints allow frontend to fetch or update event data via Axios.
-Trade-off: Need to handle CORS and ensure proper data validation between systems.
+Improve Security using OAuth or API key rate limits.
 
-5. User Experience:
-Used Tailwind CSS for quick and responsive UI development with minimal custom CSS.
-Trade-off: Requires initial learning of utility-first class system.
-
-6. Authentication (Optional):
-Custom user auth not yet implemented to keep MVP simple.
-Trade-off: No login restricts personalization and data security for users.
-
-7. Hosting & Deployment:
-Currently running locally. Future deployment planned using Render or Vercel.
-Trade-off: Local setup is fast for development but lacks real-world reliability testing.
+Add more robust logging and monitoring for backend services.
